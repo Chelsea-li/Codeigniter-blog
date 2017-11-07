@@ -59,3 +59,8 @@
 			<?php echo '<div class="alert alert-dismissible alert-success">
   <button type="button" class="close" data-dismiss="alert">&times;</button>'.$this->session->flashdata('post_updated').'</div>'; ?>
 		<?php endif; ?>
+
+		<?php if($this->session->flashdata('post_deleted')): ?>
+		<?php echo '<div class="alert alert-dismissible alert-success">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>'.$this->session->flashdata('post_deleted').'</div>'; ?>
+		<?php endif; ?>
