@@ -1,5 +1,11 @@
+body{
+    margin: 0px;
+    padding:0px 0px 20px;
+    font:60px;
+}
+
 .date{
-    background-color:#dfdfdf;
+    background-color:#e0e4ef;
     display:block;
     padding:0.5rem;
 }

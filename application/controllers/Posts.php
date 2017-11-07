@@ -10,6 +10,8 @@ class Posts extends CI_Controller{
 
     public function view($slug = null){
         $data['post'] = $this->post_model->get_posts($slug);
+        $post_id = $data['post']['id'];
+        $data['comments'] = $this->comment_model->get_comments($post_id);
 
         if(empty($data['post'])){
             show_404();
@@ -24,7 +26,7 @@ class Posts extends CI_Controller{
 
     public function create(){
         $data['title'] = "Create Post"; 
-        $data['categories'] = $this->post_model->get_categories();
+        $data['categories'] = $this->category_model->get_categories();
         $this->form_validation->set_rules('title', 'post title', 'required');
         $this->form_validation->set_rules('body', 'post body', 'required');
         if($this->form_validation->run() === FALSE){
@@ -47,13 +49,14 @@ class Posts extends CI_Controller{
                 $post_image = $_FILES['userfile']['name']; // 'name' is image's name, ex dog.jeg
             }
               $this->post_model->create_post($post_image);
-                redirect('posts');
+              $this->session->set_flashdata('post_created', 'Your post has been created.');
+              redirect('posts');
         }
     }
 
     public function edit($slug){
         $data['post'] = $this->post_model->get_posts($slug);
-        $data['categories'] = $this->post_model->get_categories();
+        $data['categories'] = $this->category_model->get_categories();
         if(empty($data['post'])){
             show_404();
         }
@@ -67,6 +70,7 @@ class Posts extends CI_Controller{
 
     public function update(){
         $this->post_model->update_post();
+         $this->session->set_flashdata('post_updated', 'Your post has been updated.');
         redirect('posts');
     }
 

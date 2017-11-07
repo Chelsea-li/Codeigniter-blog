@@ -18,7 +18,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse navbar-static-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -34,11 +34,28 @@
 					<li><a href="<?php echo base_url(); ?>">Home <span class="sr-only">(current)</span></a></li>
 					<li><a href="<?php echo site_url(); ?>about">About</a></li>
 					<li><a href="<?php echo base_url(); ?>posts">Blog</a></li>
+					<li><a href="<?php echo base_url(); ?>categories">Category</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
+					<li><a href="<?php echo site_url(); ?>users/register">Sign Up</a></li>
+				<!-- 	<li><a href="<?php echo site_url(); ?>categories/create">Create Category</a></li> -->
 					<li><a href="<?php echo site_url(); ?>posts/create">Create New Post</a></li>
 				</ul>
 			</div>
 		</div>
     </nav>
     <div class="container">
+		<?php if($this->session->flashdata('user_registered')): ?>
+			<?php echo '<div class="alert alert-dismissible alert-success">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>'.$this->session->flashdata('user_registered').'</div>'; ?>
+		<?php endif; ?>
+
+		<?php if($this->session->flashdata('post_created')): ?>
+			<?php echo '<div class="alert alert-dismissible alert-success">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>'.$this->session->flashdata('post_created').'</div>'; ?>
+		<?php endif; ?>
+
+		<?php if($this->session->flashdata('post_updated')): ?>
+			<?php echo '<div class="alert alert-dismissible alert-success">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>'.$this->session->flashdata('post_updated').'</div>'; ?>
+		<?php endif; ?>

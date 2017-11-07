@@ -42,11 +42,4 @@
         public function delete_post($id){
             return $this->db->delete('posts', array('id'=> $id));
         }
-
-        public function get_categories(){
-           //$this->db->order_by('name');
-            $query = $this->db->get('categories');
-            return $query -> result_array();
-        }
-
     }
