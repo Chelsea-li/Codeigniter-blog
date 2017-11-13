@@ -2,14 +2,14 @@
 	<div class="card">
 		<div class="card-body">
 			<?php foreach($posts as $post) :?>
-			<h4 class="card-title">
-				<?php echo $post['title']; ?>
-			</h4>
-			<small class="date">Created at <?php echo $post['created_at']; ?>
+			<h3 class="card-title">
+				<?php echo ucfirst($post['title']); ?>
+			</h3>
+			<small class="date">Created at <?php echo $post['created_at']; ?><strong> By </strong><?php echo $post['username']; ?>
             <span class="pull-right"><strong>
                 <?php echo $post['name']; ?>    
             </strong></span>
-          </small>
+          	</small>
           <br>
           <div class="row">
 			<div class="col-sm-3">

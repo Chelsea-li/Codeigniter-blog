@@ -10,12 +10,15 @@
     <?php echo $post['body']; ?>
 </div>
 <hr>
-<a class="btn btn-sm btn-info pull-left" href="<?php echo base_url(); ?>posts/edit/<?php echo $post['slug']; ?>">Edit</a>
-<?php echo form_open('posts/delete/'.$post['id']); ?>
-<button class="btn btn-sm btn-danger" type="submit">Delete</button>
-</form>
+<!-- delete and edit buttons -->
+<?php if($post['user_id'] == $this->session->userdata('user_id')): ?>
+    <a class="btn btn-sm btn-info pull-left" href="<?php echo base_url(); ?>posts/edit/<?php echo $post['slug']; ?>">Edit</a>
+    <?php echo form_open('posts/delete/'.$post['id']); ?>
+        <input type="hidden" name="user_id" value="<?php echo $post['user_id']; ?>">
+        <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+    <?php echo form_close(); ?>
+<?php endif; ?>
 <br>
-
 <!-- show comment -->
 <h3>Comments:</h3><hr>
 <?php if($comments): ?>

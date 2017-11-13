@@ -1,6 +1,6 @@
-<h2 class="text-center">Register</h2><hr>
+<h2 class="text-center"><?= $title; ?></h2><hr>
 <?php echo form_open('users/register'); ?>
-    <div class="form-horizontal col-md-5 col-md-offset-3">
+    <div class="form-horizontal col-md-6 col-md-offset-3">
         <?php echo validation_errors(); ?>
         <div class="well">
             <div class="form-group">

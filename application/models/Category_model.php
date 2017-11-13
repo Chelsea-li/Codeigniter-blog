@@ -6,6 +6,9 @@
 
         public function get_categories(){
             $this->db->order_by('name');
+            $this->db->select('categories.*,count(posts.category_id) as total');
+            $this->db->join('posts','categories.id = posts.category_id' );
+            $this->db->group_by('categories.name');
             $query = $this->db->get('categories');
             return $query -> result_array();
         }

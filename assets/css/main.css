@@ -1,11 +1,14 @@
 body{
     margin: 0px;
     padding:0px 0px 20px;
-    font:60px;
 }
 
 .date{
-    background-color:#e0e4ef;
+    background-color:#8696c1;
     display:block;
     padding:0.5rem;
+}
+
+span>#badge-cat{
+    background-color: pink;
 }
