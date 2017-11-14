@@ -1,6 +1,11 @@
 body{
     margin: 0px;
     padding:0px 0px 20px;
+    box-sizing: border-box;
+}
+
+a:hover{
+    text-decoration: none;
 }
 
 .date{
@@ -12,3 +17,36 @@ body{
 span>#badge-cat{
     background-color: pink;
 }
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.cat-tiles{
+    border-style: solid;
+    border-width: 1px;
+    padding: 30px;
+    margin-bottom: 15px;
+}
+
+.col-sm-6:nth-of-type(1)>a{
+    border-color:#ffc78e;
+    color:#ffc78e;
+}
+.col-sm-6:nth-of-type(3)>a{
+    border-color:#ffc6ff;
+    color:#ffc6ff;
+}
+.col-sm-6:nth-of-type(2)>a{
+    border-color:#b0ffff;
+    color:#b0ffff;
+}
+.col-sm-6:nth-of-type(4)>a{
+    border-color:#cccccc;
+    color:#ccc;
+}
+.col-sm-6:nth-of-type(5)>a{
+    border-color:#95fe8f;
+    color:#95fe8f;
+}
+

@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['categories'] = 'categories/index';
+$route['categories/(:any)'] = 'categories/posts/$1';
 $route['posts/create'] = 'posts/create';
 $route['posts/edit/(:any)'] = 'posts/edit/$1';
 $route['posts/update'] = 'posts/update';

@@ -8,12 +8,14 @@
 
 <head>
 	<link href="https://bootswatch.com/3/superhero/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title><?php echo $title; ?></title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css">
 	<script src="http://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 </head>
 

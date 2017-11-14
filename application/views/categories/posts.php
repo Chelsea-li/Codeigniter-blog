@@ -1,4 +1,10 @@
 <h2><?= $title; ?></h2>
+<!-- check post -->
+<?php if(!$posts): ?>
+<p>
+	There are no posts in this category. Be the first to post.
+</p>
+<?php endif; ?>
 <div class="card">
 		<div class="card-body">
 			<?php foreach($posts as $post) :?>

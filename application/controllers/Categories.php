@@ -7,14 +7,7 @@ class Categories extends CI_Controller{
         $this->load->view('categories/index',$data);
         $this->load->view('templates/footer');
     }
-/* 
-    public function create(){
-        $data['title'] = "Create category";
-        $this->load->view('templates/header',$data);
-        $this->load->view('categories/create', $data);
-        $this->load->view('templates/footer');
-    } */
-
+    
     public function posts($id){
         $data['title'] = $this->category_model->get_category($id)->name;
         $data['posts'] = $this->category_model->get_post_by_category($id);
