@@ -22,7 +22,7 @@
         <label for="photo">Add image:</label>
         <input type="file" id="photo" name="userfile" size="20">
         <p class="help-block">Format: .gif .jpg .png </p>
-        <p class="help-block">Maximum size: 2 MB</p>
+        <p class="help-block">Maximum size: 2 MB (2400 * 1300)</p>
     </div>
     <button type='submit' class="btn btn-primary">Submit</button>
 </form>
