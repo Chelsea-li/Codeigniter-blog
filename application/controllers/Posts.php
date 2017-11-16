@@ -12,7 +12,7 @@ class Posts extends CI_Controller{
         $data['post'] = $this->post_model->get_posts($slug);
         $post_id = $data['post']['id'];
         $data['comments'] = $this->comment_model->get_comments($post_id);
-
+        $data['comments_number'] = $this->comment_model->comments_number($post_id)['count(comments.id)'];
         if(empty($data['post'])){
             show_404();
         }

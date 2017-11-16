@@ -40,6 +40,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<?php if($this->session->userdata('logged_in')): ?>
+						<li><a href="#"><?php echo $this->session->userdata('username'); ?></a></li>
 						<li><a href="<?php echo site_url(); ?>posts/create">Create New Post</a></li>
 						<li><a href="<?php echo site_url(); ?>users/logout">Log Out</a></li>
 					<?php endif; ?>	

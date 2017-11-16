@@ -5,7 +5,7 @@
 			<h3 class="card-title">
 				<?php echo ucfirst($post['title']); ?>
 			</h3>
-			<small class="date">Created at <?php echo $post['created_at']; ?><strong> By </strong><?php echo $post['username']; ?>
+			<small class="date">Created at <?php echo $post['created_at']; ?><strong> By </strong><?php echo ucfirst($post['username']); ?>
             <span class="pull-right"><strong>
                 <?php echo $post['name']; ?>    
             </strong></span>

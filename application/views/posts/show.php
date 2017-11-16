@@ -20,11 +20,17 @@
 <?php endif; ?>
 <br>
 <!-- show comment -->
-<h3>Comments:</h3><hr>
+<h3>Comments(
+    <?php if(!$comments_number){
+        echo 0;
+    } else {
+        echo $comments_number;
+    }?>
+    ):</h3><hr>
 <?php if($comments): ?>
     <?php foreach($comments as $comment): ?>
         <div class="well">
-            <p><strong><?php echo $comment['name']; ?></strong> 
+            <p><strong><?php echo ucfirst($comment['username']); ?></strong> 
             <?php echo $comment['created_at']; ?>
             </p>
             <?php echo $comment['body']; ?>
@@ -39,16 +45,11 @@
 <h3>Add comment</h3><hr>
 <?php echo validation_errors(); ?>
 <?php echo form_open("comments/create/".$post['id']); ?>
-    <div class="form-inline">
-        <label for="name">Name:</label>
-        <input class="form-control" type="text" id="name" name="name" value="<?php echo set_value('name'); ?>">
-        <label for="email">Email:</label>
-        <input class="form-control" type="email" id="email" name="email" value="<?php echo set_value('email'); ?>">
-    </div>
     <div class="form-group"></div>
-        <label for="comment">Comment:</label>
         <textarea name="body" id="comment"><?php echo set_value('body'); ?></textarea>
-        <input type="hidden" name="slug" value="<?php echo $post['slug']; ?>"><br>
+        <input type="hidden" name="slug" value="<?php echo $post['slug']; ?>">
+        <input type="hidden" name="user_id" value="<?php echo $this->session->userdata('user_id'); ?>">
+        <br>
          <button type="submit" class="btn btn-success">Submit</button>
     </div>
 </form>
